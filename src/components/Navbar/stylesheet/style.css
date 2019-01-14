@@ -1,0 +1,46 @@
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #363636;
+  color: #ffffff;
+  height: 2.8rem;
+  font-size: 1.5rem;
+  align-items: center;
+  padding-left: 2%;
+}
+
+.back-button {
+  justify-content: left;
+  flex-basis: 15%;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  cursor: pointer;
+  color: #a7a4a4;
+}
+
+.title {
+  justify-content: right;
+  flex-basis: 60%;
+  text-align: center;
+}
+
+.title-content {
+  padding-left: 5%;
+}
+
+.logo {
+  flex-basis: 25%;
+  cursor: pointer;
+  text-align: right;
+  margin-right: 2%;
+}
+
+.logo-text {
+  margin-left: 5%;
+}
+
+.logo:hover {
+  color: #a7a4a4;
+}
