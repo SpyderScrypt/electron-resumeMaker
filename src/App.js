@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 import store from "./store/store";
 import { Provider } from "react-redux";
-import Trial from "./components/Trial";
-import Navbar from "./components/Navbar/Navbar";
 import AppRouter from "./router/AppRouter";
 
 const electron = window.require("electron");
