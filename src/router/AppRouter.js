@@ -10,8 +10,8 @@ export default class AppRouter extends Component {
       <Router>
         <div>
           <Navbar />
-          <Route path="/" exact component={Trial} />
-          <Route path="/main"  component={Main} />
+          <Route path="/" exact component={Main} />
+          <Route path="/main"  component={Trial} />
         </div>
       </Router>
     );
