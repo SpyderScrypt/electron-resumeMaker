@@ -8,6 +8,8 @@ const {
 
 const path = require("path");
 const url = require("url");
+const shell = electron.shell;
+const fs = require("fs");
 
 let mainWindow;
 
@@ -42,4 +44,27 @@ app.on("ready", () => {
 ipcMain.on("todo:add", (event, todo) => {
   console.log(todo, "received data from react in index.js");
   mainWindow.webContents.send("todo:add", "Akash");
+});
+
+// Pdf printing
+ipcMain.on("print-to-pdf", function(event) {
+  // First Create a directory manually called outputpdf
+  const pdfPath = path.join(__dirname, "/outputpdf/print.pdf");
+  // Get window which is sending event
+  const win = BrowserWindow.fromWebContents(event.sender);
+  // Print pdf
+  win.webContents.printToPDF(
+    { printBackground: true, landscape: true },
+    function(error, data) {
+      if (error) throw error;
+      fs.writeFile(pdfPath, data, function(error) {
+        if (error) {
+          throw error;
+        }
+        // Open pdf after saving it to disk
+        shell.openExternal("file://" + pdfPath);
+        event.sender.send('wrote-pdf', pdfPath)
+      });
+    }
+  );
 });

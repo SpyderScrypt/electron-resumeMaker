@@ -110,8 +110,9 @@ class Main extends Component {
     var status = document.getElementById("resumeForm").checkValidity();
     if (status == true) {
       e.preventDefault();
+      this.props.sendData(this.state);
+      this.props.history.push(`/resume`);
     }
-    this.props.sendData(this.state);
   };
 
   render() {
@@ -176,7 +177,7 @@ class Main extends Component {
           </div>
           {this.state.skills.map((value, index) => {
             return (
-              <div className="input-row row">
+              <div key={index} className="input-row row">
                 <div className="dynamic-input">
                   <input
                     type="text"
@@ -191,7 +192,6 @@ class Main extends Component {
                 <div className="close">
                   <span>
                     <a
-                      href
                       name="skills"
                       onClick={e => {
                         this.removeHandler(e, index);
@@ -205,19 +205,18 @@ class Main extends Component {
             );
           })}
           <a
-            href
             name="skills"
             onClick={e => {
               this.addHandler(e);
             }}
           >
-            <i class="fa fa-plus-circle fa-2x" aria-hidden="true" />
+            <i className="fa fa-plus-circle fa-2x" aria-hidden="true" />
           </a>
 
           {/* Education */}
           {this.state.college.map((value, index) => {
             return (
-              <div className="input-row row">
+              <div key={index} className="input-row row">
                 <div className="dynamic-input">
                   <input
                     type="text"
@@ -246,13 +245,12 @@ class Main extends Component {
                       this.dynamicInputHandler(e, index);
                     }}
                     value={this.state.percentage[index]}
-                    required={true}
+                    required
                   />
                 </div>
                 <div className="close">
                   <span>
                     <a
-                      href
                       name="education"
                       onClick={e => {
                         this.removeHandler(e, index);
@@ -266,19 +264,18 @@ class Main extends Component {
             );
           })}
           <a
-            href
             name="education"
             onClick={e => {
               this.addHandler(e);
             }}
           >
-            <i class="fa fa-plus-circle fa-2x" aria-hidden="true" />
+            <i className="fa fa-plus-circle fa-2x" aria-hidden="true" />
           </a>
 
           {/* Projects */}
           {this.state.projectName.map((value, index) => {
             return (
-              <div className="input-row row">
+              <div key={index} className="input-row row">
                 <div className="dynamic-input">
                   <input
                     type="text"
@@ -302,7 +299,6 @@ class Main extends Component {
                 <div className="close">
                   <span>
                     <a
-                      href
                       name="project"
                       onClick={e => {
                         this.removeHandler(e, index);
@@ -316,13 +312,12 @@ class Main extends Component {
             );
           })}
           <a
-            href
             name="project"
             onClick={e => {
               this.addHandler(e);
             }}
           >
-            <i class="fa fa-plus-circle fa-2x" aria-hidden="true" />
+            <i className="fa fa-plus-circle fa-2x" aria-hidden="true" />
           </a>
           {/* Languages Known */}
           <div className="input-row">
@@ -334,11 +329,9 @@ class Main extends Component {
               placeholder="Enter Languages Known"
             />
           </div>
-          {/* <a class="button" onClick={this.sendDataHandler}>
-            Submit
-          </a> */}
+
           <input
-            class="button"
+            className="button"
             type="submit"
             value="Submit"
             onClick={this.sendDataHandler}

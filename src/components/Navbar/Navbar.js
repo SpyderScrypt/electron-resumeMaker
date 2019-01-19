@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./stylesheet/style.css";
-import { withRouter } from 'react-router-dom';
+import { withRouter } from "react-router-dom";
 
 class Navbar extends Component {
   clickhandler = () => {
@@ -17,7 +17,7 @@ class Navbar extends Component {
 
   render() {
     return (
-      <div className="navbar-container">
+      <div id="navbar" className="navbar-container">
         <div className="back-button" onClick={this.backHandler}>
           <i className="fa fa-arrow-left" />
         </div>

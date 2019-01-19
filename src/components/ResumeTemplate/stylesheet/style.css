@@ -1,0 +1,56 @@
+#container {
+  margin-top: 1.5em;
+}
+
+#resume {
+  margin-left: 1em;
+}
+
+p {
+  display: block !important;
+}
+
+.line {
+  border: 1px solid black;
+}
+
+.name {
+  color: #252932;
+  text-align: center;
+  font-size: 1.7em;
+  font-weight: 500;
+}
+
+.title {
+  color: #343434;
+  font-size: 1.3em !important;
+}
+
+.row {
+  color: #343434;
+  font-size: 1em;
+}
+
+.block {
+  border: 1.2px solid gray;
+}
+
+.button {
+  text-decoration: none;
+  color: #ffffff;
+  box-sizing: border-box;
+  background-color: #ff2b56;
+  padding: 10px 15px;
+  font-size: 1em;
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  font-weight: lighter;
+  margin-top: 1em;
+}
+.button:hover {
+  background-color: #ff7979;
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+  cursor: pointer;
+}
